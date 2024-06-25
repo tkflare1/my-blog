@@ -2,6 +2,9 @@ import { client, UrlFor } from "@/app/lib/sanity";
 import fullPost from "@/app/lib/interface" 
 import Image from "next/image";
 import { PortableText } from "next-sanity";
+
+export const revalidate = 30;
+
 async function getData(slug: string) {
     const query = `
     *[_type == 'post' && slug.current == '${slug}'] {
