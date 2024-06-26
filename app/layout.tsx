@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gray-100`}>
+      <body className={`${inter.className} bg-gray-100 prose-invert`}>
       <ThemeProvider
             attribute="class"
             defaultTheme="system"
