@@ -3,6 +3,8 @@ export default interface simplePost{
     currentSlug: string;
     authorRef: string;
     mainImage: any;
+    category: string;
+    body: any;
 }
 
 export default interface fullPost {
