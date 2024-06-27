@@ -37,7 +37,7 @@ export default async function Home() {
         <h1 className="font-normal lowercase" style={{fontSize: '64px', lineHeight: '89.6px', fontFamily: 'Chillax', top: '148px', left: '404px', width: '632px', height: '90px', color: '#000000', opacity: '1', margin: '0 auto' }}>
           Notes from the Field
         </h1>
-        <p className="font-normal lowercase" style={{ width: '835px', height: '30px', color: '#000000', fontFamily: 'Avenir Next', fontSize: '24px', fontWeight: '400', lineHeight: '30px', textAlign: 'center', margin: '0 auto', opacity: '1', top: '268px', left: '303px'}}>
+        <p className="font-normal lowercase mx-auto" style={{ width: '835px', height: '30px', color: '#000000', fontFamily: 'Avenir Next', fontSize: '24px', fontWeight: '400', lineHeight: '30px', textAlign: 'center', margin: '0 auto', opacity: '1', top: '268px', left: '303px'}}>
           Check out our blog for the latest news & updates from the Uncommon team.
         </p>
       </header>
