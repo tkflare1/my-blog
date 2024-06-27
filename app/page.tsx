@@ -2,10 +2,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import simplePost from "./lib/interface";
 import { client, UrlFor } from "./lib/sanity";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { PortableText } from "next-sanity";
-import Header from "./components/Header";
+import NavBar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 export const revalidate = 30;
@@ -20,7 +19,7 @@ async function getData() {
       "category": categories[0]->title,
       body,
       _createdAt
-}`;
+    }`;
 
   try {
     const data = await client.fetch(query);
@@ -36,10 +35,10 @@ export default async function Home() {
   const data: simplePost[] = await getData();
   return (
     <div>
-      <Header />
+      <NavBar />
       <div className="container mx-auto p-4">
         <header className="text-center my-12">
-          <h1 className="text-5xl font-bold">Notes from the Field</h1>
+          <h1 className="text-3xl font-light uppercase">Notes from the Field</h1>
           <p className="text-lg mt-4">Check out our blog for the latest news & updates from the Uncommon team.</p>
         </header>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -55,16 +54,14 @@ export default async function Home() {
               <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full">
                 {post.category}
               </div>
-               <Link href={`/post/${post.currentSlug}`}>
-              <CardContent className="p-4">
-                <h3 className="text-xl font-semibold line-clamp-2">{post.title}</h3>
-                <div className="text-sm text-gray-600 mt-2 line-clamp-3">
-                  <PortableText value={post.body} />
-                </div>
-                <p className="text-gray-500 text-sm mt-2">{new Date(post._createdAt).toLocaleDateString()}</p>
-                
-                  {/* <Link href={`/post/${post.currentSlug}`}>Read More</Link> */}
-              </CardContent>
+              <Link href={`/post/${post.currentSlug}`}>
+                <CardContent className="p-4">
+                  <h3 className="text-xl font-semibold line-clamp-2">{post.title}</h3>
+                  <div className="text-sm text-gray-600 mt-2 line-clamp-3">
+                    <PortableText value={post.body} />
+                  </div>
+                  <p className="text-gray-500 text-sm mt-2">{new Date(post._createdAt).toLocaleDateString()}</p>
+                </CardContent>
               </Link>
             </Card>
           ))}

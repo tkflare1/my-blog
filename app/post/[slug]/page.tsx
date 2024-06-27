@@ -36,7 +36,6 @@ async function getData(slug: string) {
         <Header />
         <div className="mt-8 container mx-auto px-4 sm:px-6 lg:px-8">
           <h1>
-            <span className="block text-base text-center text-primary font-semibold tracking-wide uppercase">Uncommon Blog</span>
             <span className="mt-2 block text-3xl text-center leading-8 font-bold tracking-tight sm:text-4xl">{data.title}</span>
           </h1>
           <Image
