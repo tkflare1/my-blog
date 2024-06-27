@@ -11,8 +11,8 @@ function NavBar() {
   };
 
   return (
-    <nav className="w-full relative flex items-center justify-between max-w-6xl py-5 lowercase">
-      <Link href="/" className="font-bold text-3xl">
+    <nav className="w-full relative flex items-center justify-between max-w-full py-5 lowercase">
+      <Link href="/" className="font-bold text-2xl text-blue-800">
         Uncommon
       </Link>
       <div className="hidden md:flex space-x-4">

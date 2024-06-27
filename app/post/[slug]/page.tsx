@@ -1,10 +1,9 @@
 
 import { PortableText } from "next-sanity";
 import Image from "next/image";
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header";
 import fullPost from "@/app/lib/interface";
 import { client, UrlFor } from "@/app/lib/sanity";
+import "../../mystyles.css";
 
 export const revalidate = 30;
 
@@ -39,14 +38,14 @@ async function getData(slug: string) {
           </h1>
           <Image
             src={UrlFor(data.mainImage).url()}
-            width={800}
-            height={800}
+            width={1304}
+            height={760}
             alt="Image"
             priority
-            className="rounded-lg mt-8 border"
+            className="rounded-lg mt-8 border justify-center image-border"
           />
-          <div className="mt-16 prose-blue prose-xl">
-            <PortableText value={data.body} />
+          <div className="mt-16 prose-blue prose-xl blog-body">
+            <PortableText value={data.body}/>
           </div>
         </div>
       </div>

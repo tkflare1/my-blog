@@ -7,6 +7,7 @@
     color: #000000;
     opacity: 1;
     margin: 0 auto;
+    font-weight: 600;
   }
   
   .notes-subheader {
@@ -23,27 +24,38 @@
   
   .blog-card {
     width: 100%;
+    height: 100%;
     max-width: 414px;
-    height: 500px;
+    max-height: 500px;
     padding: 19px 16px 21px 16px;
     background: #F6F7F8;
     border-radius: 30px;
   }
   
+  .card-content {
+    padding-top: 20px;
+  }
+
   .blog-image {
     width: 100%;
     height: 261px;
     border-radius: 30px 30px 30px 30px;
     background: #5E5E5E;
   }
+
+  .image-border {
+    border-radius: 30px 30px 30px 30px;
+  }
   
   .blog-category {
     padding: 12px 34px;
     background: #0747A1;
     border-radius: 9999px; /* Fully rounded shape */
-    font-family: 'Avenir Next', sans-serif;
+    font-family: 'Avenir', sans-serif;
     line-height: 21.86px;
     color: white;
+    top: 30px;
+    left: 30px;
   }
   
   .blog-title {
@@ -75,3 +87,25 @@
     max-width: 100%;
   }
   
+
+  .my-container {
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+    top: 352px;
+    left: 67px;
+    right: 67px;
+    margin: 0 auto;
+  }
+
+  .footer-text {
+    font-family: 'Avenir', sans-serif;
+    text-transform: lowercase;
+  }
+  
+  .footer-author-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-left: -10px; /* Adjust to overlap */
+  }

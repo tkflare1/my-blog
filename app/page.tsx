@@ -33,17 +33,17 @@ async function getData() {
 export default async function Home() {
   const data: simplePost[] = await getData();
   return (
-    <div className="p-4">
+    <div className="max-w-full mx-auto">
       <header className="text-center my-12">
-        <h1 className="notes-header font-normal lowercase">
+        <h1 className="notes-header lowercase">
           Notes from the Field
         </h1>
         <p className="notes-subheader font-normal lowercase">
           Check out our blog for the latest news & updates from the Uncommon team.
         </p>
       </header>
-      <div className="container mx-auto lg:pl-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="my-container max-w-full flex">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {data.map((post, idx) => (
             <Card key={idx} className="blog-card rounded-lg shadow-lg overflow-hidden relative">
               <Image
@@ -54,11 +54,11 @@ export default async function Home() {
                 priority
                 className="blog-image object-cover rounded-lg"
               />
-              <div className="absolute blog-category" style={{ top: '30px', left: '30px' }}>
+              <div className="absolute blog-category">
                 {post.category}
               </div>
               <Link href={`/post/${post.currentSlug}`}>
-                <CardContent className="p-4" style={{ paddingTop: '20px' }}>
+                <CardContent className="p-4 card-content">
                   <h3 className="blog-title font-semibold line-clamp-2 lowercase">
                     {post.title}
                   </h3>
