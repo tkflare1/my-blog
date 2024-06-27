@@ -11,7 +11,7 @@ function NavBar() {
   };
 
   return (
-    <nav className="w-full relative flex items-center justify-between max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5 lowercase">
+    <nav className="w-full relative flex items-center justify-between max-w-6xl mx-auto px-2 sm:px-6 lg:px-8 py-5 lowercase">
       <Link href="/" className="font-bold text-3xl">
         Uncommon
       </Link>

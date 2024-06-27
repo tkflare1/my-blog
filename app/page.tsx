@@ -42,24 +42,23 @@ export default async function Home() {
           Check out our blog for the latest news & updates from the Uncommon team.
         </p>
       </header>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto lg:pl-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {data.map((post, idx) => (
             <Card key={idx} className="blog-card rounded-lg shadow-lg overflow-hidden relative">
-              <div className="rounded-lg overflow-hidden h-64">
-                <Image
-                  src={UrlFor(post.mainImage).url()}
-                  alt="Image"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg"
-                />
-              </div>
+              <Image
+                src={UrlFor(post.mainImage).url()}
+                alt="Image"
+                width={500}
+                height={300}
+                priority
+                className="blog-image object-cover rounded-lg"
+              />
               <div className="absolute blog-category" style={{ top: '30px', left: '30px' }}>
                 {post.category}
               </div>
               <Link href={`/post/${post.currentSlug}`}>
-                <CardContent className="p-4">
+                <CardContent className="p-4" style={{ paddingTop: '20px' }}>
                   <h3 className="blog-title font-semibold line-clamp-2 lowercase">
                     {post.title}
                   </h3>
