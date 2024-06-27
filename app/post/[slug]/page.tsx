@@ -33,7 +33,6 @@ async function getData(slug: string) {
   
     return (
       <div>
-        <Header />
         <div className="mt-8 container mx-auto px-4 sm:px-6 lg:px-8">
           <h1>
             <span className="mt-2 block text-3xl text-center leading-8 font-bold tracking-tight sm:text-4xl">{data.title}</span>
@@ -50,7 +49,6 @@ async function getData(slug: string) {
             <PortableText value={data.body} />
           </div>
         </div>
-        <Footer />
       </div>
     );
   }

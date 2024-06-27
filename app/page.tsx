@@ -35,10 +35,9 @@ export default async function Home() {
   const data: simplePost[] = await getData();
   return (
     <div>
-      <NavBar />
       <div className="container mx-auto p-4">
         <header className="text-center my-12">
-          <h1 className="text-3xl font-light uppercase">Notes from the Field</h1>
+          <h1 className="text-3xl font-light lowercase">Notes from the Field</h1>
           <p className="text-lg mt-4">Check out our blog for the latest news & updates from the Uncommon team.</p>
         </header>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -67,7 +66,6 @@ export default async function Home() {
           ))}
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
