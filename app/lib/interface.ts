@@ -5,6 +5,7 @@ export default interface simplePost{
     mainImage: any;
     category: string;
     body: any;
+    _createdAt: any;
 }
 
 export default interface fullPost {
