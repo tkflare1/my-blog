@@ -55,16 +55,17 @@ export default async function Home() {
               <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full">
                 {post.category}
               </div>
+               <Link href={`/post/${post.currentSlug}`}>
               <CardContent className="p-4">
                 <h3 className="text-xl font-semibold line-clamp-2">{post.title}</h3>
                 <div className="text-sm text-gray-600 mt-2 line-clamp-3">
                   <PortableText value={post.body} />
                 </div>
                 <p className="text-gray-500 text-sm mt-2">{new Date(post._createdAt).toLocaleDateString()}</p>
-                <Button asChild className="w-full mt-4">tawe
+                
                   {/* <Link href={`/post/${post.currentSlug}`}>Read More</Link> */}
-                </Button>
               </CardContent>
+              </Link>
             </Card>
           ))}
         </div>
