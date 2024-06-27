@@ -4,6 +4,7 @@ import { client, UrlFor } from "./lib/sanity";
 import Image from "next/image";
 import Link from "next/link";
 import { PortableText } from "next-sanity";
+import "./mystyles.css";
 
 export const revalidate = 30;
 
@@ -33,38 +34,37 @@ export default async function Home() {
   const data: simplePost[] = await getData();
   return (
     <div>
-      <header>
-        <h1 className="font-normal lowercase" style={{fontSize: '64px', lineHeight: '89.6px', fontFamily: 'Chillax', top: '148px', left: '404px', width: '632px', height: '90px', color: '#000000', opacity: '1', margin: '0 auto' }}>
+      <header className="text-center my-12">
+        <h1 className="notes-header font-normal lowercase">
           Notes from the Field
         </h1>
-        <p className="font-normal lowercase mx-auto" style={{ width: '835px', height: '30px', color: '#000000', fontFamily: 'Avenir Next', fontSize: '24px', fontWeight: '400', lineHeight: '30px', textAlign: 'center', margin: '0 auto', opacity: '1', top: '268px', left: '303px'}}>
+        <p className="notes-subheader font-normal lowercase">
           Check out our blog for the latest news & updates from the Uncommon team.
         </p>
       </header>
       <div className="container mx-auto p-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" style={{ marginTop: '50px' }}>
           {data.map((post, idx) => (
-            <Card key={idx} className="rounded-lg shadow-lg overflow-hidden relative" style={{ width: '414px', height: '500px', padding: '19px 16px 21px 16px', background: '#F6F7F8', borderRadius: '30px 0px 0px 0px' }}>
+            <Card key={idx} className="blog-card rounded-lg shadow-lg overflow-hidden relative">
               <Image
                 src={UrlFor(post.mainImage).url()}
                 alt="Image"
                 width={500}
                 height={300}
-                className="object-cover"
-                style={{ width: '382px', height: '261px', padding: '30px 208px 185px 30px', borderRadius: '30px 0px 0px 0px', background: '#5E5E5E' }}
+                className="blog-image object-cover"
               />
-              <div className="absolute text-white rounded-full font-normal" style={{ padding: '12px 34px 12px 34px', background: '#0747A1', borderRadius: '30px 0px 0px 0px', fontFamily: 'Avenir Next', lineHeight: '21.86px', width: 'Hug(144px)', height: 'Hug(46px', top: '30px', left: '30px'}}>
+              <div className="absolute blog-category" style={{ top: '30px', left: '30px' }}>
                 {post.category}
               </div>
               <Link href={`/post/${post.currentSlug}`}>
                 <CardContent className="p-4" style={{ paddingTop: '20px' }}>
-                  <h3 className="text-xl font-semibold line-clamp-2" style={{ fontFamily: 'Chillax', fontSize: '22px', fontWeight: '600', lineHeight: '30.8px', textAlign: 'left', color: '#000000', width: '356px', height: '62px' }}>
+                  <h3 className="blog-title font-semibold line-clamp-2 lowercase">
                     {post.title}
                   </h3>
-                  <div className="text-sm text-gray-600 mt-2 line-clamp-3" style={{ fontFamily: 'Avenir Next', fontSize: '16px', fontWeight: '400', lineHeight: '30px', textAlign: 'left', color: '#000000', width: '382px', height: '60px' }}>
+                  <div className="blog-body text-sm text-gray-600 mt-2 line-clamp-3">
                     <PortableText value={post.body} />
                   </div>
-                  <p className="text-gray-500 text-sm mt-2" style={{ fontFamily: 'Avenir Next', fontSize: '16px', fontWeight: '400', lineHeight: '30px', textAlign: 'left', color: '#000000', width: '146px', height: '30px' }}>
+                  <p className="blog-date text-gray-500 text-sm mt-2">
                     {new Date(post._createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                   </p>
                 </CardContent>
