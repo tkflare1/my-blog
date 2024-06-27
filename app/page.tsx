@@ -42,7 +42,7 @@ export default async function Home() {
           Check out our blog for the latest news & updates from the Uncommon team.
         </p>
       </header>
-      <div className="container mx-16">
+      <div className="container mx-1">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {data.map((post, idx) => (
             <Card key={idx} className="blog-card rounded-lg shadow-lg overflow-hidden relative">
