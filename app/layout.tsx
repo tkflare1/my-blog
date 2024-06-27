@@ -22,9 +22,9 @@ export default function RootLayout({
         <title>Uncommon Blog</title>
         <meta name="description" content={metadata.description ?? undefined} />
       </head>
-      <body className={`${inter.className} bg-white`}>
+      <body className={`${inter.className} bg-white mx-auto px-5 sm:px-6 lg:px-8`}>
         <NavBar />
-        <main className="container mx-auto px-4 sm:px-6 lg:px-8">{children}</main>
+        <main className="container">{children}</main>
         <Footer />
       </body>
     </html>
