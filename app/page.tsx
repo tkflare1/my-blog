@@ -33,7 +33,7 @@ async function getData() {
 export default async function Home() {
   const data: simplePost[] = await getData();
   return (
-    <div>
+    <div className="p-4">
       <header className="text-center my-12">
         <h1 className="notes-header font-normal lowercase">
           Notes from the Field
@@ -42,8 +42,8 @@ export default async function Home() {
           Check out our blog for the latest news & updates from the Uncommon team.
         </p>
       </header>
-      <div className="container mx-auto p-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6 lg:gap-8" style={{ marginTop: '50px' }}>
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {data.map((post, idx) => (
             <Card key={idx} className="blog-card rounded-lg shadow-lg overflow-hidden relative">
               <Image
