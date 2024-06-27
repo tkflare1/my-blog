@@ -46,14 +46,15 @@ export default async function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {data.map((post, idx) => (
             <Card key={idx} className="blog-card rounded-lg shadow-lg overflow-hidden relative">
-              <Image
-                src={UrlFor(post.mainImage).url()}
-                alt="Image"
-                width={500}
-                height={300}
-                priority
-                className="blog-image object-cover rounded-lg"
-              />
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src={UrlFor(post.mainImage).url()}
+                  alt="Image"
+                  width={500}
+                  height={300}
+                  className="object-cover"
+                />
+              </div>
               <div className="absolute blog-category" style={{ top: '30px', left: '30px' }}>
                 {post.category}
               </div>
