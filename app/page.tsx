@@ -53,7 +53,7 @@ export default async function Home() {
                 className="object-cover"
                 style={{ width: '382px', height: '261px', padding: '30px 208px 185px 30px', borderRadius: '30px 0px 0px 0px', background: '#5E5E5E' }}
               />
-              <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full" style={{ padding: '12px 34px', background: '#0747A1', borderRadius: '30px 0px 0px 0px' }}>
+              <div className="absolute text-white rounded-full font-normal" style={{ padding: '12px 34px 12px 34px', background: '#0747A1', borderRadius: '30px 0px 0px 0px', fontFamily: 'Avenir Next', lineHeight: '21.86px', width: 'Hug(144px)', height: 'Hug(46px', top: '30px', left: '30px'}}>
                 {post.category}
               </div>
               <Link href={`/post/${post.currentSlug}`}>
